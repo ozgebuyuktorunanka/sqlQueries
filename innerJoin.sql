@@ -1,4 +1,9 @@
 -- city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+
+--INNER JOIN
+-- Inner join simetriktir. Tablolar yer değiştirebilir örneğin aşağıdaki ilk örnekte yer alan city ile country yer değiştirse dahi
+-- inner join birleştirme işlemi yapabilir country_id sütunu üzerinden birleştirir.
+
 SELECT
     city.city,
     country.country
