@@ -1,13 +1,13 @@
 # 📚 SQL Query Practice with dvdrental
 
 This repository provides practice SQL queries using the popular `dvdrental` sample database. It's great for beginners and intermediate learners to understand how to retrieve and manipulate data using SQL.
-
 ---
 
 ## 🛠 Requirements
 
 - PostgreSQL installed on your machine
-- `dvdrental` sample database restored
+- Database example for test.
+- Basic understanding of SQL concepts
 
 ---
 
@@ -80,8 +80,8 @@ FROM city
 INNER JOIN country ON city.country_id = country.country_id;
 ```
 
-## Comparation Tables for Inner and Right Join.
-### LEFT JOIN ve RIGHT JOIN Farkları
+### Comparation Tables for Inner and Right Join.
+#### LEFT JOIN ve RIGHT JOIN Farkları
 | Feature             | LEFT JOIN                                                                 | RIGHT JOIN                                                                 |
 |---------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | **What it Includes?** | Includes **all** rows from the left table (the first table after FROM) and matching rows from the right table. | Includes **all** rows from the right table (the table after JOIN) and matching rows from the left table. |
@@ -90,11 +90,22 @@ INNER JOIN country ON city.country_id = country.country_id;
 | **Alternative Syntax** | Can also be written as `LEFT OUTER JOIN`.                                  | Can also be written as `RIGHT OUTER JOIN`.                                 |
 | **Symmetry** | A `RIGHT JOIN` query can be written as a `LEFT JOIN` by swapping the left and right tables. | A `LEFT JOIN` query can be written as a `RIGHT JOIN` by swapping the left and right tables. |
 
-## UNION ALL:
+### UNION ALL:
 Important Note: SELECT queries combined with UNION ALL must have:
    - The same number of columns,
    - Corresponding columns with compatible data types. (varchar - varchar column or if column includes string - string value )
 
+### INTERSECT
+The INTERSECT operator returns rows that are common to the result sets of two SELECT queries. Like UNION, INTERSECT removes duplicate rows from the result by default.
+
+   Things to consider when using **INTERSECT**:
+   - Both SELECT queries must have the same number of columns.
+   - The data types of the corresponding columns must be compatible.
+
+**Result**:
+- The result of the query is a single result set containing only rows with matching CustomerName in both the VIP_Customers table and the Loyal_Customers table. Even if a customer name occurs more than once in both tables, it will only appear once in the result set (because INTERSECT removes duplicates).
+
+- The INTERSECT operator is useful for finding the intersection (in the sense of set theory) between data sets.
 
 ## Sources:
    1. https://www.w3schools.com/sql/ 
