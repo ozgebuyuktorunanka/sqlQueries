@@ -1,8 +1,8 @@
--- city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+-- Write the INNER JOIN query that we can see the city and country names in the city table and country table together.
 
 --INNER JOIN
--- Inner join simetriktir. Tablolar yer değiştirebilir örneğin aşağıdaki ilk örnekte yer alan city ile country yer değiştirse dahi
--- inner join birleştirme işlemi yapabilir country_id sütunu üzerinden birleştirir.
+-- Inner join is symmetric. Tables can be swapped, for example, even if city is swapped with country in the first example below
+-- inner join joins over the country_id column, which can perform a join operation.
 
 SELECT
     city.city,
@@ -13,7 +13,9 @@ INNER JOIN
     country ON city.country_id = country.country_id;
 
 
---customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+
+--Write the INNER JOIN query in which we can see the payment_id in the payment 
+--table and the first_name and last_name names in the customer table together.
 SELECT
     payment.payment_id,
     customer.first_name,
@@ -23,7 +25,8 @@ FROM
 INNER JOIN
     customer ON payment.customer_id = customer.customer_id;
 
---customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+--Write the INNER JOIN query in which we can see the rental_id in the rental table with the customer table and the first_name and last_name 
+-- names in the customer table together.
 SELECT
     rental.rental_id,
     customer.first_name,

@@ -1,7 +1,6 @@
---FULL OUTER JOIN, sol tablodaki tüm satırları ve sağ tablodaki tüm satırları döndürür. 
---Eşleşme olmadığında, diğer taraftaki sütunlar için NULL değerleri döndürülür. 
---Başka bir deyişle, LEFT JOIN ve RIGHT JOIN'in sonuçlarının birleşimidir.
-
+--FULL OUTER JOIN returns all rows in the left table and all rows in the right table. 
+--When there is no match, NULL values are returned for the columns on the other side. 
+--In other words, it is the union of the results of LEFT JOIN and RIGHT JOIN.
 
 SELECT
     C.CustomerName,

@@ -82,15 +82,18 @@ INNER JOIN country ON city.country_id = country.country_id;
 
 ## Comparation Tables for Inner and Right Join.
 ### LEFT JOIN ve RIGHT JOIN Farkları
-
-| Özellik             | LEFT JOIN                                                                 | RIGHT JOIN                                                                 |
+| Feature             | LEFT JOIN                                                                 | RIGHT JOIN                                                                 |
 |---------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| **Ne İçerir?** | Sol tablodaki (FROM'dan sonraki ilk tablo) **tüm** satırları ve sağ tablodaki eşleşen satırları içerir. | Sağ tablodaki (JOIN'den sonraki tablo) **tüm** satırları ve sol tablodaki eşleşen satırları içerir. |
-| **Odak Noktası** | Sol tabloya odaklanır. Sonuç setinde sol tablonun tüm satırları mutlaka bulunur. | Sağ tabloya odaklanır. Sonuç setinde sağ tablonun tüm satırları mutlaka bulunur. |
-| **Eşleşmeyen Satırlar** | Sol tablodaki eşleşmeyen satırlar sonuç setine dahil edilir. Sağ taraftaki sütunlar için değerler `NULL` olur. | Sağ tablodaki eşleşmeyen satırlar sonuç setine dahil edilir. Sol taraftaki sütunlar için değerler `NULL` olur. |
-| **Alternatif Yazım** | `LEFT OUTER JOIN` olarak da yazılabilir.                                  | `RIGHT OUTER JOIN` olarak da yazılabilir.                                 |
-| **Simetri** | Bir `RIGHT JOIN` sorgusunu, sol ve sağ tabloların yerini değiştirerek bir `LEFT JOIN` olarak yazabilirsiniz. | Bir `LEFT JOIN` sorgusunu, sol ve sağ tabloların yerini değiştirerek bir `RIGHT JOIN` olarak yazabilirsiniz. |
+| **What it Includes?** | Includes **all** rows from the left table (the first table after FROM) and matching rows from the right table. | Includes **all** rows from the right table (the table after JOIN) and matching rows from the left table. |
+| **Focus** | Focuses on the left table. All rows from the left table are guaranteed to be in the result set. | Focuses on the right table. All rows from the right table are guaranteed to be in the result set. |
+| **Non-matching Rows** | Non-matching rows from the left table are included in the result set. Values for columns from the right side will be `NULL`. | Non-matching rows from the right table are included in the result set. Values for columns from the left side will be `NULL`. |
+| **Alternative Syntax** | Can also be written as `LEFT OUTER JOIN`.                                  | Can also be written as `RIGHT OUTER JOIN`.                                 |
+| **Symmetry** | A `RIGHT JOIN` query can be written as a `LEFT JOIN` by swapping the left and right tables. | A `LEFT JOIN` query can be written as a `RIGHT JOIN` by swapping the left and right tables. |
 
+## UNION ALL:
+Important Note: SELECT queries combined with UNION ALL must have:
+   - The same number of columns,
+   - Corresponding columns with compatible data types. (varchar - varchar column or if column includes string - string value )
 
 
 ## Sources:
