@@ -35,15 +35,14 @@ This repository provides practice SQL queries using the popular `dvdrental` samp
 
 ```
 .
-├── queries/
-│   ├── 01_basic_select.sql
-│   ├── 02_filtering_data.sql
-│   ├── 03_sorting_results.sql
-│   ├── 04_joins.sql
-│   ├── 05_group_by_aggregate.sql
-│   └── 06_subqueries.sql
+├── sqlQueries/
+│   ├── letJoin.sql
+│   ├── innerJoin.sql
+│   ├── rightJoin.sql
+│   ├── fullJoin.sql
+│   ├── xx.sql
+│   └── xx.sql
 ├── README.md
-└── LICENSE
 ```
 
 ---
@@ -81,14 +80,22 @@ FROM city
 INNER JOIN country ON city.country_id = country.country_id;
 ```
 
----
+## Comparation Tables for Inner and Right Join.
+### LEFT JOIN ve RIGHT JOIN Farkları
 
-## 🤝 Contributing
+| Özellik             | LEFT JOIN                                                                 | RIGHT JOIN                                                                 |
+|---------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| **Ne İçerir?** | Sol tablodaki (FROM'dan sonraki ilk tablo) **tüm** satırları ve sağ tablodaki eşleşen satırları içerir. | Sağ tablodaki (JOIN'den sonraki tablo) **tüm** satırları ve sol tablodaki eşleşen satırları içerir. |
+| **Odak Noktası** | Sol tabloya odaklanır. Sonuç setinde sol tablonun tüm satırları mutlaka bulunur. | Sağ tabloya odaklanır. Sonuç setinde sağ tablonun tüm satırları mutlaka bulunur. |
+| **Eşleşmeyen Satırlar** | Sol tablodaki eşleşmeyen satırlar sonuç setine dahil edilir. Sağ taraftaki sütunlar için değerler `NULL` olur. | Sağ tablodaki eşleşmeyen satırlar sonuç setine dahil edilir. Sol taraftaki sütunlar için değerler `NULL` olur. |
+| **Alternatif Yazım** | `LEFT OUTER JOIN` olarak da yazılabilir.                                  | `RIGHT OUTER JOIN` olarak da yazılabilir.                                 |
+| **Simetri** | Bir `RIGHT JOIN` sorgusunu, sol ve sağ tabloların yerini değiştirerek bir `LEFT JOIN` olarak yazabilirsiniz. | Bir `LEFT JOIN` sorgusunu, sol ve sağ tabloların yerini değiştirerek bir `RIGHT JOIN` olarak yazabilirsiniz. |
 
-1. Fork the repo
-2. Create a new branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m 'feat: add new SQL example'`
-4. Push to your fork: `git push origin feature/your-feature`
-5. Create a pull request
 
-All contributions are welcome!
+
+## Sources:
+   1. https://www.w3schools.com/sql/ 
+   2. 
+   3. 
+   4.
+
